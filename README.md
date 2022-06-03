@@ -17,7 +17,9 @@ Solution:
 To get started:
 (1) Download or clone the repository from Github.
 (2) Create an .env file in the base directory of the project. 
-(3) The following variables should be added/replaced:
+(3) Create a Klaviyo account.
+(4) Create a List in your Klaviyo account.
+(5) Replace the following variables in your script:
     "csv_file_name.csv" - this is the name of your csv file
     PRIVATE - this is the private API key, which you can grab/create from Klaviyo > Accounts > Settings > API keys
     LIST_ID - this is the 6 digit List ID, which you can grab from the Klaviyo List's URL
