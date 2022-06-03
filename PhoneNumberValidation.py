@@ -27,7 +27,7 @@ import csv
 # open CSV file with error handling
 # added utf encoding or the BOM (byte order mark) appears before Phone Number
 try:
-    file = open("smsvalidatetesting.csv", mode='r', encoding='utf-8-sig')
+    file = open("csv_file_name.csv", mode='r', encoding='utf-8-sig')
     # Print "File opened" if opened successfully.
     print("File opened")
 
@@ -86,8 +86,8 @@ for numbers in phonenumbers.PhoneNumberMatcher(json_rows, "US"):
 
     json_payload = json.dumps(payload)
 
-    PRIVATE = 'redacted'
-    LIST_ID = 'QWqRnY'
+    PRIVATE = 'private API key, grab/create from Klaviyo > Accounts > Settings > API keys'
+    LIST_ID = '6 digit List ID, grab from Klaviyo List URL'
     url = "https://a.klaviyo.com/api/v2/list/" + LIST_ID + "/subscribe?api_key=" + PRIVATE
 
     headers = {
