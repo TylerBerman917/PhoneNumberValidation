@@ -23,6 +23,8 @@ import csv
 # https://stackabuse.com/validating-and-formatting-phone-numbers-in-python/
 # https://python.plainenglish.io/a-beginners-guide-to-formatting-csv-data-in-python-521421389fef
 # https://stackoverflow.com/questions/5627425/what-is-a-good-way-to-handle-exceptions-when-trying-to-read-a-file-in-python
+# https://developers.klaviyo.com/en/reference/subscribe
+# https://help.klaviyo.com/hc/en-us/articles/360054803711-Guide-to-Collecting-SMS-Consent-via-API
 
 def get_json_rows_from_csv(csv_file_name):
     # open CSV file with error handling
@@ -99,7 +101,7 @@ def send_grouped_profile_data_to_klaviyo(profile_data):
     for i in range(0, len(profile_data), 100):
         grouped_profiles.append(profile_data[i:i+100])
 
-    # use subscribe endpoint: https://developers.klaviyo.com/en/reference/subscribe, which honors the opt-in settings of your subscriber List
+    # use subscribe endpoint, which honors the opt-in settings of your subscriber List
     # API will respond with an empty list: [] if List is double opt-in. Users must confirm their subscription before they are added to your subscriber List
     url = "https://a.klaviyo.com/api/v2/list/" + LIST_ID + "/subscribe?api_key=" + PRIVATE_KEY
 
@@ -116,13 +118,13 @@ def send_grouped_profile_data_to_klaviyo(profile_data):
         print("Profiles imported successfully. SMS Consent updated.")
 
 
-csv_file_name = "csv_file_name_here"
+csv_file_name = "csv_file_name_here.csv"
 json_rows = get_json_rows_from_csv(csv_file_name)
 formatted_phone_numbers = get_formatted_phone_numbers(json_rows)
 profile_data = get_location_details(formatted_phone_numbers)
 
-PRIVATE_KEY = 'private API key, grab/create from Klaviyo > Accounts > Settings > API keys'
-LIST_ID = '6 digit List ID, grab from Klaviyo List URL'
+PRIVATE_KEY = 'private API key'
+LIST_ID = '6 digit List ID from Klaviyo List URL'
 send_grouped_profile_data_to_klaviyo(profile_data)
 
 
