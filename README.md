@@ -12,7 +12,7 @@ This is one of our clients' first onboarding steps with SMS & the process can be
 <ol>
 <li>Programmatically parse out US phone numbers from a csv file.</li>
 <li>Reformat phone numbers into E.164.</li>
-<li>Capture country & language as additional properties.</li>
+<li>Capture country & language as additional Profile properties.</li>
 <li>Upload SMS consent.</li>
 </ol>
 <p><h3>To get started:</h3>
@@ -23,8 +23,8 @@ This is one of our clients' first onboarding steps with SMS & the process can be
 <li> Create a List in your Klaviyo account.</li>
 <li> Replace the following variables in your script:</li>
     <ol>
-        <li>"csv_file_name.csv" - this is the name of your csv file</li>
-        <li>PRIVATE - this is the private API key, which you can grab/create from Klaviyo > Accounts > Settings > API keys</li>
+        <li>"csv_file_name_here.csv" - this is the name of your csv file</li>
+        <li>PRIVATE_KEY - this is your private API key, which you can grab/create from Klaviyo > Accounts > Settings > API keys</li>
         <li>LIST_ID - this is the 6 digit List ID, which you can grab from the Klaviyo List's URL</li>
 </ol>
 </ol>    
